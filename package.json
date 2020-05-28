@@ -5,12 +5,16 @@
   "main": "index.js",
   "scripts": {
     "start": "node src/index.js",
-    "dev": "env-cmd -f ./config/dev.env supervisor src/index.js "
+    "dev": "env-cmd -f ./config/dev.env supervisor src/index.js ",
+    "test": "env-cmd -f ./config/test.env jest --watch"
+  },
+  "jest": {
+    "testEnvironment": "node"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "bcryptjs": "^2.4.3",    
+    "bcryptjs": "^2.4.3",
     "express": "^4.17.1",
     "jsonwebtoken": "^8.5.1",
     "mongodb": "^3.5.7",
@@ -20,7 +24,9 @@
     "validator": "^13.0.0"
   },
   "devDependencies": {
-    "supervisor": "^0.12.0",
-    "env-cmd": "^10.1.0"
+    "env-cmd": "^10.1.0",
+    "jest": "^26.0.1",
+    "supertest": "^4.0.2",
+    "supervisor": "^0.12.0"
   }
 }
